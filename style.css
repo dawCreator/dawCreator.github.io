@@ -1,0 +1,138 @@
+body {
+    background-image: linear-gradient(rgb(255, 255, 255), rgb(204, 192, 165));
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    overflow: hidden;
+
+    touch-action: none;
+    -webkit-user-select: none;
+    /* Chrome all / Safari all */
+    -moz-user-select: none;
+    /* Firefox all */
+    -ms-user-select: none;
+}
+
+body>h1 {
+    color: rgb(68, 68, 68);
+    font-family: 'Roboto', sans-serif;
+}
+
+body>gameBoard {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    position: relative;
+    height: 50vh;
+    width: 50vh;
+    aspect-ratio: 1;
+    width: fit-content;
+}
+
+body>gameBoard>word {
+    width: 50vh;
+    height: 100%;
+    display: flex;
+    gap: 2px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: solid 4px rgb(116, 116, 116);
+}
+
+body>gameBoard>word>letter {
+    aspect-ratio: 1;
+    background-color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 200%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+}
+
+@keyframes blinkAnimation {
+    to {
+        background-color: white;
+    }
+}
+
+body>gameBoard>word>letter.focused {
+    animation: blinkAnimation .7s infinite alternate;
+    background-color: #dbf1f5;
+}
+
+body>gameBoard>word>letter.false {
+    background-color: #ebafaf;
+}
+
+body>gameBoard>word>letter.true {
+    background-color: #90cc90;
+}
+
+body>gameBoard>word>letter.position {
+    background-color: #dbc894;
+}
+
+body>keyBoard {
+    width: 100%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 20px;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+}
+
+body>keyBoard::before {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 60%;
+    background-color: grey;
+    border-radius: 5px;
+    position: relative;
+    bottom: 5px;
+}
+
+body>keyBoard>keyRow {
+    position: relative;
+    height: fit-content;
+    width: 90%;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    touch-action: manipulation;
+}
+
+body>keyBoard>keyRow>key {
+    border: solid grey 3px;
+    color: rgb(87, 87, 87);
+    height: 60px;
+    width: 60px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 120%;
+    outline: none;
+}
+
+body>keyBoard>keyRow>key.disabled {
+    opacity: .5;
+}
+
+body>keyBoard>keyRow>key:active {
+    background-color: #e4c685;
+}
