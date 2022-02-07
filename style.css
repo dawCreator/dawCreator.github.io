@@ -12,6 +12,9 @@ body {
     overflow: hidden;
 
     touch-action: none;
+
+    /* SELECT */
+    user-select: none;
     -webkit-user-select: none;
     /* Chrome all / Safari all */
     -moz-user-select: none;
