@@ -83,7 +83,7 @@ window.onload = () => {
     keys.forEach(key => {
         key.addEventListener('click', onKeyPress)
         key.addEventListener('touchstart', onKeyPress, {passive:true})
-        key.addEventListener('touchmove', event => event.preventDefault())
+        key.addEventListener('touchmove', event => event.preventDefault(), {passive:true})
         key.addEventListener('touchend', event => event.preventDefault())
     })
     
